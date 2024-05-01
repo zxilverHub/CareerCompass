@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {changeDomain} from '../redux/domain'
 import logo from '../assets/icons/logo.png'
 import heroImg from '../assets/images/Hero illustration.jpg'
+import findCareerImg from '../assets/images/find career.png'
 import notfound from '../assets/images/not found.jpg'
 import './landingpage.css'
 import { useState } from 'react'
@@ -12,7 +13,7 @@ function LandingPage() {
     const [isRegistrationExpand, setRegistrationExpand] = useState(false)
 
     const mobileNavStyle = {
-      top: isNavExpand? '20%': '-100%'
+      top: isNavExpand? '25%': '-50%'
     }
 
   return (
@@ -22,10 +23,10 @@ function LandingPage() {
             <img src={logo} alt="CareerCompass logo" title='CareerCompass logo' />
           </a>
 
-          <ul className='flex' style={mobileNavStyle}>
+          <ul className='flex' style={mobileNavStyle} onClick={()=>setIsNavExpand(false)}>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact us</a></li>
+            <li><a href="#about-us">About us</a></li>
+            <li><a href="#contact-us">Contact us</a></li>
             <li>
               <div className="cta flex" onClick={()=>setRegistrationExpand(true)}>
                 Sign up
@@ -55,8 +56,8 @@ function LandingPage() {
           <div className="registration">
             <div className="registration-container flex">
               <div className="left column">
-                <h2>This system is under development!</h2>
-                <p>{'(Nabayag pay deadline boy)'}</p>
+                <h2>Haan pay nalpas boi!</h2>
+                <p>{'(Aguray ka bassit)'}</p>
               </div>
               <div className="right">
                 <img src={notfound} alt="Not found" />
@@ -89,6 +90,38 @@ function LandingPage() {
                 </svg>
               </div>
               <div className="cta accent">About us</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="about-us" className='flex'>
+        <div className="illustration">
+            <img src={findCareerImg} alt="Find career image" title='Find career' />
+          </div>
+          <div className="about column">
+            <h2>About us</h2>
+            <p className="eye-brow">
+              Welcome to
+              <span> Career</span>
+              <span>Compass</span>
+            </p>
+            <p className="text">
+            Career Compass is your personalized career assessment tool designed to help you discover your true calling and navigate your professional journey with confidence.
+            </p>
+
+            <p className="text">
+            Our assessment process uncovers your unique strengths, passions, and aspirations, providing tailored guidance and resources to help you reach new heights in your career.
+            </p>
+
+            <p className="message">
+              Discover Your True Calling with CareerCompass.
+            </p>
+
+            <div className="cta flex" onClick={()=>setRegistrationExpand(true)}>
+              Get started
+              <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.308162 1.08844C0.110846 1.28581 0 1.55347 0 1.83256C0 2.11165 0.110846 2.37931 0.308162 2.57669L5.5181 7.78663L0.308162 12.9966C0.116438 13.1951 0.0103501 13.4609 0.0127482 13.7369C0.0151463 14.0129 0.125838 14.2769 0.320983 14.472C0.516127 14.6671 0.78011 14.7778 1.05608 14.7802C1.33204 14.7826 1.59791 14.6765 1.79641 14.4848L7.75048 8.53075C7.9478 8.33338 8.05864 8.06572 8.05864 7.78663C8.05864 7.50754 7.9478 7.23988 7.75048 7.0425L1.79641 1.08844C1.59904 0.891119 1.33138 0.780273 1.05229 0.780273C0.773199 0.780273 0.505537 0.891119 0.308162 1.08844Z" fill="white"/>
+                </svg>
             </div>
           </div>
         </div>

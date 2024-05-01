@@ -68,7 +68,7 @@
 @keyframes navAnimation {
     100% {
         padding-block: .5rem;
-        background-color: var(--white);
+        background-color: var(--light);
         justify-content: space-between;
     }
 }
@@ -80,6 +80,7 @@
     border-radius: 12px;
     transition-duration: .3s;
     cursor: pointer;
+    box-shadow: 2px 2px 12px 2px rgb(223, 214, 214);
 }
 
 #landing-page .cta.accent {
@@ -169,7 +170,8 @@
         position: relative;
         width: 80%;
         height: 80%;
-        border-radius: 16px; 
+        max-height: 600px;
+        border-radius: 22px; 
         box-shadow: 10px 10px 0px var(--secondary);
         background-color: var(--white);
         overflow: hidden;
@@ -217,6 +219,55 @@
     }
 }
 
+#about-us {
+    padding: clamp(5rem, 8vw, 8rem) 10%;
+    justify-content: space-between;
+
+    .about {
+        h2 {
+            font-size: var(--title-size);
+            font-weight: var(--weight-lg);
+            text-shadow: 8px 8px 8px var(--light);
+        }
+
+        .eye-brow,
+        .eye-brow span {
+            font-weight: var(--weight-md);
+            font-size: var(--subtitle-size);
+
+            span:first-child {
+                color: var(--primary);
+            }
+
+            span:last-child {
+                color: var(--accent);
+            }
+        }
+
+        .message {
+            font-weight: var(--weight-md);
+            color: var(--text);
+        }
+
+        .cta:hover {
+            box-shadow: 5px 5px 0px var(--accent);
+        }
+    }
+
+    .illustration {
+        img {
+            width: 100%;
+            scale: 1.2;
+            filter: drop-shadow(8px 8px 0 var(--accent));
+        }
+    }
+
+    .text {
+        max-width: 60ch;
+        color: var(--text);
+    }
+}
+
 @keyframes fadeIn {
     0% {
         scale: 0;
@@ -257,7 +308,7 @@
         ul {
             margin-left: 0 !important;
             position: fixed;
-            top: 20%;
+            top: 25%;
             left: 50%;
             z-index: 99;
             transform: translateX(-50%);
@@ -316,6 +367,24 @@
             width: 100%;
             background: var(--white) !important;
             gap: .3rem;
+        }
+    }
+
+    #about-us {
+        flex-direction: column-reverse !important;
+        gap: 2rem;
+
+        .about {
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center;
+        }
+
+        .illustration {
+            img {
+                transform: translateX(-5%);
+                scale: 1;
+            }
         }
     }
 }

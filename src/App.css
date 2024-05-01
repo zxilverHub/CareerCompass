@@ -8,13 +8,17 @@
     --text: rgb(20, 20, 20);
 
     --title-size: clamp(2rem, 4vw, 4rem);
-    --subtitle-size: clamp(1.1rem, 3vw, 3rem);
+    --subtitle-size: clamp(1.1rem, 2.5vw, 2.5rem);
     --text-size: clamp(1rem, 1.5vw, 1.125rem);
     --smalltext-size: clamp(.825rem, 1vw, 1rem);
 
     --weight-lg: 800;
     --weight-md: 600;
     --weight-sm: 500;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
