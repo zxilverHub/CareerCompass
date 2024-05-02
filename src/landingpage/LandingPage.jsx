@@ -20,22 +20,22 @@ function LandingPage() {
 
       {
         label: 'Career Trends',
-        img: './src/assets/images/career trends.png'
+        img: './src/landingpage/images/career trends.png'
       },
 
       {
         label: 'No degree careers',
-        img: './src/assets/images/no degree.png'
+        img: './src/landingpage/images/no degree.png'
       },
 
       {
         label: 'Discover best career for you',
-        img: './src/assets/images/discover careers.png'
+        img: './src/landingpage/images/discover careers.png'
       },
 
       {
         label: 'Set your goals',
-        img: './src/assets/images/set goal.png'
+        img: './src/landingpage/images/set goal.png'
       }
     ]
 
