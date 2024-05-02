@@ -5,8 +5,8 @@ import heroImg from '../assets/images/Hero illustration.jpg'
 import findCareerImg from '../assets/images/About illsutration.png'
 import notfound from '../assets/images/not found.jpg'
 import './landingpage.css'
-import { useState } from 'react'
-import { careerTrends, noDegree, discoverCareer, setGoal, lion1, lion2, lion3 } from './DiscoverImages'
+import { lazy, useState } from 'react'
+import { careerTrends, noDegree, discoverCareer, setGoal, lion1, lion2, lion3, sponsor } from './DiscoverImages'
 
 function LandingPage() {
     const dispatch = useDispatch()
@@ -74,6 +74,64 @@ function LandingPage() {
         }
       }
     ]
+
+    const footerLinks = {
+      tools:
+      [
+        {
+          url: 'https://www.figma.com/',
+          label: 'Figma'
+        },
+
+        {
+          url: 'https://code.visualstudio.com/',
+          label: 'VScode'
+        },
+
+        {
+          url: 'https://git-scm.com/',
+          label: 'Git'
+        },
+
+        {
+          url: 'https://github.com/',
+          label: 'Github'
+        }
+      ],
+
+      resources:
+      [
+        {
+          url: 'https://www.freepik.com/',
+          label: 'Freepik'
+        },
+
+        {
+          url: 'https://openai.com/',
+          label: 'chatGPT'
+        },
+
+        {
+          url: 'https://www.careerexplorer.com/',
+          label: 'CareerExplorer'
+        },
+
+        {
+          url: 'https://www.pixels.com/',
+          label: 'Pixels'
+        },
+
+        {
+          url: 'https://www.unsplash.com/',
+          label: 'Unsplash'
+        },
+
+        {
+          url: 'https://www.dribbble.com/',
+          label: 'Dribbble'
+        }
+      ]
+    }
 
   return (
     <div id='landing-page'>
@@ -249,6 +307,53 @@ function LandingPage() {
             ))
 
             }
+          </div>
+        </div>
+
+        <div className="sponsor">
+          <img src={sponsor} alt="" className="bg" />
+
+          <div className="message flex">
+            <h4>Navigate your career with confidence</h4>
+            <div className="cta" onClick={()=>setRegistrationExpand(true)}>Find career now</div>
+          </div>
+        </div>
+
+        <div className="footer flex">
+          <div className="footer-nav column">
+            <a href='#'><img src={logo} alt="CareerCompass logo" title='CareerCompass logo' /></a>
+            <div className="nav flex">
+              <a href="#">Home</a>
+              <a href="#about-us">About us</a>
+              <div className="cta" onClick={()=>setRegistrationExpand(true)}>Sign up</div>
+            </div>
+            <p className="copyright">
+              &copy; Copyright reserved 2024.
+            </p>
+          </div>
+          <div className="footer-links flex">
+            <div className="links column">
+              <h5>Tools</h5>
+              {footerLinks.tools.map((tool, i) => (
+                <a href={tool.url} key={i} className='link' target='_blank'>{tool.label}</a>
+              ))
+              }
+            </div>
+
+            <div className="links column">
+              <h5>Resources</h5>
+              {footerLinks.resources.map((source, i) => (
+                <a href={source.url} key={i} className='link' target='_blank'>{source.label}</a>
+              ))
+              }
+            </div>
+
+            <div className="links column">
+              <h5>Others</h5>
+              <div className="link">Developer option</div>
+              <div className="link">Feedback</div>
+              <div className="link">FAQs</div>
+            </div>
           </div>
         </div>
     </div>

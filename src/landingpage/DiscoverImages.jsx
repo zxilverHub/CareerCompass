@@ -7,4 +7,6 @@ import lion1 from './team/lion 1.jpg'
 import lion2 from './team/lion 2.jpg'
 import lion3 from './team/lion 3.jpg'
 
-export { careerTrends, noDegree, discoverCareer, setGoal, lion1, lion2, lion3 }
+import sponsor from './images/sponsor image.png'
+
+export { careerTrends, noDegree, discoverCareer, setGoal, lion1, lion2, lion3, sponsor }
