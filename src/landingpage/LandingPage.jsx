@@ -6,6 +6,7 @@ import findCareerImg from '../assets/images/About illsutration.png'
 import notfound from '../assets/images/not found.jpg'
 import './landingpage.css'
 import { useState } from 'react'
+import { careerTrends, noDegree, discoverCareer, setGoal } from './DiscoverImages'
 
 function LandingPage() {
     const dispatch = useDispatch()
@@ -20,22 +21,22 @@ function LandingPage() {
 
       {
         label: 'Career Trends',
-        img: '/CareerCompass/src/landingpage/images/career trends.png'
+        img: careerTrends
       },
 
       {
         label: 'No degree careers',
-        img: '/CareerCompass/src/landingpage/images/no degree.png'
+        img: noDegree
       },
 
       {
         label: 'Discover best career for you',
-        img: '/CareerCompass/src/landingpage/images/discover careers.png'
+        img: discoverCareer
       },
 
       {
         label: 'Set your goals',
-        img: '/CareerCompass/src/landingpage/images/set goal.png'
+        img: setGoal
       }
     ]
 
