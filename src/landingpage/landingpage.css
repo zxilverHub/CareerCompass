@@ -180,12 +180,15 @@
         box-shadow: 10px 10px 0px var(--secondary);
         background-color: var(--white);
         overflow: hidden;
+        gap: 0;
 
         animation: scaledIn .2s ease-in-out forwards;
 
         .right {
             flex: 1 0 200px;
             height: 100%;
+            /* padding: 5%; */
+
             img {
                 width: 100%;
                 height: 100%;
@@ -197,21 +200,7 @@
         .left {
             flex: 1 0 200px;
             height: 100%;
-            text-align: center !important;
-            justify-content: center !important;
-            align-items: center;
-            background-color: var(--light);
 
-            h2 {
-                font-size: var(--subtitle-size);
-                color: var(--secondary);
-                font-weight: var(--weight-md);
-            }
-
-            p {
-                font-size: var(--text);
-                color: var(--accent);
-            }
         }
 
         .close-registration {
@@ -755,17 +744,13 @@
     }
 
     .registration-container {
+        width: 90% !important;
         position: relative;
-        height: 50% !important;
+        height: 60% !important;
         flex-direction: column-reverse;
 
         .right {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            inset: 0;
-            z-index: 100;
-            padding: .5rem;
+            display: none;
         }
 
         .left {
@@ -777,6 +762,7 @@
             transform: translateX(-50%);
             height: auto !important;
             width: 100%;
+            height: 100% !important;
             background: var(--white) !important;
             gap: .3rem;
         }

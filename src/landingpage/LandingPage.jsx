@@ -3,15 +3,19 @@ import {changeDomain} from '../redux/domain'
 import logo from '../assets/icons/logo.png'
 import heroImg from '../assets/images/Hero illustration.jpg'
 import findCareerImg from '../assets/images/About illsutration.png'
-import notfound from '../assets/images/not found.jpg'
+import registrationIllustration from './images/Registration illustration.png'
+import signUpIllustration from './images/sign up.png'
 import './landingpage.css'
-import { lazy, useState } from 'react'
+import { useState } from 'react'
+import Login from './Login'
+import Signup from './Signup'
 import { careerTrends, noDegree, discoverCareer, setGoal, lion1, lion2, lion3, sponsor } from './DiscoverImages'
 
 function LandingPage() {
     const dispatch = useDispatch()
     const [isNavExpand, setIsNavExpand] = useState(false)
-    const [isRegistrationExpand, setRegistrationExpand] = useState(false)
+    const [isRegistrationExpand, setRegistrationExpand] = useState(true)
+    const [isInLogin, setIsInLogin] = useState(true)
 
     const mobileNavStyle = {
       top: isNavExpand? '25%': '-50%'
@@ -172,12 +176,14 @@ function LandingPage() {
         { isRegistrationExpand &&
           <div className="registration">
             <div className="registration-container flex">
-              <div className="left column">
-                <h2>Haan pay nalpas boi!</h2>
-                <p>{'(Aguray ka bassit)'}</p>
+              <div className="left">
+                { isInLogin?
+                  <Login /> :
+                  <Signup />
+                }
               </div>
               <div className="right">
-                <img src={notfound} alt="Not found" />
+                <img src={signUpIllustration} alt="Not found" />
               </div>
 
               <div className="close-registration" onClick={()=>setRegistrationExpand(false)}>
