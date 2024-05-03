@@ -2,8 +2,11 @@ import './signup.css'
 import { useState } from 'react'
 import facebook from './icons/facebook.png'
 import google from './icons/Google.png'
+import { changeDomain } from '../redux/domain'
+import { useDispatch } from 'react-redux'
 
 function Signup({option}) {
+  const dispatch = useDispatch()
   const [showPass, setShowPass] = useState('password')
   const [showPass2, setShowPass2] = useState('password')
 
@@ -72,7 +75,12 @@ function Signup({option}) {
             <input type="checkbox" id='agree-to-termsandcondition' />
             <p className='terms-and-condition-label'>Already read and agreed to <span>Terms and Condition</span> </p>
           </div>
-          <div className="log-in-button">Sign up</div>
+          <div className="log-in-button" 
+            onClick={()=>{
+                dispatch(changeDomain())
+            }}>
+            Sign up
+          </div>
           <p className='change-registration-option'>
                 Already have an account?
                 <span className='change-option' onClick={()=>option(true)}>Log in here</span>

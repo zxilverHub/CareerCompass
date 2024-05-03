@@ -14,7 +14,7 @@ import { careerTrends, noDegree, discoverCareer, setGoal, lion1, lion2, lion3, s
 function LandingPage() {
     const dispatch = useDispatch()
     const [isNavExpand, setIsNavExpand] = useState(false)
-    const [isRegistrationExpand, setRegistrationExpand] = useState(true)
+    const [isRegistrationExpand, setRegistrationExpand] = useState(false)
     const [isInLogin, setIsInLogin] = useState(false)
 
     const mobileNavStyle = {
