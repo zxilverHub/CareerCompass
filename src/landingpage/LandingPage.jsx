@@ -15,7 +15,7 @@ function LandingPage() {
     const dispatch = useDispatch()
     const [isNavExpand, setIsNavExpand] = useState(false)
     const [isRegistrationExpand, setRegistrationExpand] = useState(true)
-    const [isInLogin, setIsInLogin] = useState(true)
+    const [isInLogin, setIsInLogin] = useState(false)
 
     const mobileNavStyle = {
       top: isNavExpand? '25%': '-50%'
@@ -178,8 +178,8 @@ function LandingPage() {
             <div className="registration-container flex">
               <div className="left">
                 { isInLogin?
-                  <Login /> :
-                  <Signup />
+                  <Login option={setIsInLogin} /> :
+                  <Signup option={setIsInLogin} />
                 }
               </div>
               <div className="right">

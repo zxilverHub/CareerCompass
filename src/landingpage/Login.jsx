@@ -4,8 +4,9 @@ import './login.css'
 import facebook from './icons/facebook.png'
 import google from './icons/Google.png'
 
-function Login() {
+function Login({option}) {
     const [showPass, setShowPass] = useState('password')
+
   return (
     <div className='log-in-page column'>
         <div className="email-input column">
@@ -47,7 +48,7 @@ function Login() {
             <div className="log-in-button">Log in</div>
             <p className='change-registration-option'>
                 Don't have account yet?
-                <span className='change-option'>Sign up here</span>
+                <span className='change-option' onClick={()=>option(false)}>Sign up here</span>
             </p>
         </div>
 
