@@ -22,8 +22,15 @@ Landing page
 
 CareerCompass.jsx:
 
-    isInAdmin - boolean -> redux
+    isInAdmin - boolean -> redux -> domain.jsx
     _"Use to switch between admin and user page"
+    
+    To change domain:
+        Use the changeDomain action from domain.jsx
+        dispatch(changeDomain())
+            _"This will change the object "isInLandingPage -> boolean""
+        No need for parameter -> (state.isInLandingPage = !state.isInLandingPage)
+
     Components:
         <Admin />
         <UserApp />
@@ -31,7 +38,7 @@ CareerCompass.jsx:
     UserApp.jsx
     _"Use to render the whole UI for users"
 
-    currentPage -> redux
+    currentPage -> redux -> apps.jsx
     _"Use for switching between different pages (ex <Home /> to <Profile />) in user app also for nav"
     * Use the changeContainer('container') action from redux (apps.jsx) to change the label (currentPage)
     * where container is the place where <Home /> rendered
@@ -54,5 +61,5 @@ CareerCompass.jsx:
 
 
     Home.jsx
-    results -> redux
+    results -> redux -> user.jsx
     "Use to show the assessment results"
