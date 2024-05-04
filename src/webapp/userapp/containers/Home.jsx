@@ -1,7 +1,7 @@
 import './home.css'
 import { useSelector, useDispatch } from 'react-redux'
 import Avatar from './components/Avatar'
-import { expanNav } from '../../../redux/apps'
+import { expanNav, changContainer } from '../../../redux/apps'
 
 function Home() {
   const avatar = useSelector(state => state.user.avatar)
@@ -28,7 +28,11 @@ function Home() {
           </svg>
         </div>
 
-        <div className="home-avatar">
+        <div 
+          onClick={()=>{
+            dispatch(changContainer("Profile"))
+          }}
+        className="home-avatar">
           <Avatar src={avatar} />
         </div>
       </div>

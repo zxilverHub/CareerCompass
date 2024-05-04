@@ -5,9 +5,8 @@
 }
 
 .home-header {
-    /* margin-top: 1rem; */
     width: 70%;
-    padding: 1rem;
+    padding: .5rem;
     border-radius: 12px;
     background-color: var(--white);
 
@@ -65,7 +64,7 @@
     }
 
     .start-test-button {
-        padding: .7rem clamp(1rem, 3vw, 2rem);
+        padding: .7rem clamp(1.3rem, 3vw, 2rem);
         white-space: nowrap;
         background-color: var(--primary);
         border-radius: 12px;
@@ -95,6 +94,18 @@
 
         .menu-button {
             display: block;
+        }
+    }
+
+    .search-feild {
+        aspect-ratio: 1;
+
+        svg {
+            scale: 1.1;
+        }
+
+        input {
+            display: none;
         }
     }
 

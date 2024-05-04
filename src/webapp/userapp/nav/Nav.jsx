@@ -6,11 +6,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { changContainer, expanNav } from '../../../redux/apps'
 
 
-function Nav({container}) {
+function Nav() {
     const dispatch = useDispatch()
     const currentPage = useSelector(state => state.apps.currentPage)
     const expandNav = useSelector(state => state.apps.isNavExpand)
-    const isClickNav = useSelector(state => state.apps.isClickMenu)
     
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
@@ -88,7 +87,6 @@ function Nav({container}) {
                 <div 
                     onClick={()=> {
                         dispatch(changContainer(menu.label))
-                        container(menu.label)
                         dispatch(expanNav(false))
                     }}
                 className={currentPage==menu.label? 'menu active' : 'menu'} key={i}>

@@ -1,6 +1,7 @@
 import './userapp.css'
 import Nav from './nav/Nav'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 import Home from './containers/Home'
 import Profile from './containers/Profile'
@@ -21,11 +22,11 @@ const Container = (container) => {
 }
 
 function UserApp() {
-  const [appContainer, setAppContainer] = useState('Home')
+  const appContainer = useSelector(state => state.apps.currentPage) 
 
   return (
     <div className='user-app'>
-        <Nav container={setAppContainer} />
+        <Nav />
         <div className="page-container">
             {Container(appContainer)}
         </div>
