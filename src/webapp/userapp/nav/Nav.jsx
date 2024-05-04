@@ -12,7 +12,7 @@ function Nav({container}) {
     const expandNav = useSelector(state => state.apps.isNavExpand)
     const isClickNav = useSelector(state => state.apps.isClickMenu)
     
-    const [screenWidth, setScreenWidth] = useState()
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
     const menus = [
         {
@@ -89,6 +89,7 @@ function Nav({container}) {
                     onClick={()=> {
                         dispatch(changContainer(menu.label))
                         container(menu.label)
+                        dispatch(expanNav(false))
                     }}
                 className={currentPage==menu.label? 'menu active' : 'menu'} key={i}>
                     {menu.icon}
