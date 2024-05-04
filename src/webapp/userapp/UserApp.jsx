@@ -7,6 +7,7 @@ import Home from './containers/Home'
 import Profile from './containers/Profile'
 import Explore from './containers/Explore'
 import Settings from './containers/Settings'
+import Search from './containers/Search'
 
 const Container = (container) => {
   switch(container) {
@@ -18,6 +19,8 @@ const Container = (container) => {
       return <Explore />
     case 'Settings':
       return <Settings />
+    case 'Search':
+      return <Search />
   }
 }
 

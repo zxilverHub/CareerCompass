@@ -50,7 +50,7 @@
     }
 
     .home-avatar {
-        width: clamp(3rem, 3vw, 3rem);
+        width: clamp(2rem, 3vw, 3rem);
         aspect-ratio: 1;
         border-radius: 50%;
         overflow: hidden;
@@ -86,6 +86,58 @@
     }
 }
 
+.home-results {
+    position: absolute;
+    right: .5rem;
+    top: 0;
+    margin-top: 1rem;
+    padding: 1rem;
+
+    width: calc(30% - 1rem);
+    height: calc(100% - 2rem);
+    background-color: var(--white);
+    border-radius: 12px;
+    max-height: 700px;
+
+    h2 {
+        position: relative;
+        z-index: 10;
+        font-size: var(--text-1-size);
+        font-weight: var(--weight-md);
+        color: var(--text);
+        margin-bottom: .2rem;
+    }
+
+    .empty-result {
+        user-select: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 9;
+
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: clamp(30%, 45%, 50%);
+            aspect-ratio: 1s;
+            opacity: .6;
+        }
+
+        p {
+            color: var(--text);
+            opacity: .8;
+        }
+    }
+}
+
 @media (max-width: 770px) {
     .home-header {
         width: 100%;
@@ -111,5 +163,16 @@
 
     #home {
         padding: 3%;
+
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .home-results {
+        position: relative;
+        inset: 0;
+
+        height: 200px !important;
+        width: 100%;
     }
 }

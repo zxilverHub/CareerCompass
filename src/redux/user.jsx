@@ -5,7 +5,14 @@ export const user = createSlice({
     initialState: {
         username: 'User123',
         id: 1,
-        avatar: 'src/assets/avatar/dashaTaran.jpg'
+        avatar: 'src/assets/avatar/dashaTaran.jpg',
+
+        results: {
+            isTakeTest: false,
+            career: [],
+            degree: [],
+            characteristics: []
+        }
     },
 
     reducers: {

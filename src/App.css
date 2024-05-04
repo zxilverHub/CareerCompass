@@ -4,12 +4,14 @@
     --accent: #FCA21B;
     --white: #ffffff;
     --light: #F5F5F5;
+    --darker-light: #ddd4d4;
     --title: rgb(12, 12, 12);
     --text: rgb(48, 45, 45);
 
     --title-size: clamp(2rem, 4vw, 4rem);
     --subtitle-size: clamp(1.5rem, 2.5vw, 2.5rem);
     --text-size: clamp(1rem, 1.5vw, 1.125rem);
+    --text-1-size: clamp(1.1rem, 1.7vw, 2rem);
     --smalltext-size: clamp(.825rem, 1vw, 1rem);
 
     --weight-lg: 800;
