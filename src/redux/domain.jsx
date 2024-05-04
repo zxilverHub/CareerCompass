@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 export const domain = createSlice({
     name: 'domain',
     initialState: {
-        isInLandingPage: true,
+        isInLandingPage: false,
         isInAdmin: false
     },
 

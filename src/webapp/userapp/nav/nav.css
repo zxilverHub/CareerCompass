@@ -1,8 +1,8 @@
 .user-app nav {
-    position: fixed;
-    left: 0;
-    top: 0;
+    position: relative;
     height: 100%;
+    z-index: 100;
+    width: auto;
 
     display: flex;
     flex-direction: column;
@@ -87,7 +87,24 @@ nav .nav-header {
     }
 }
 
+
+/* Nav is FIXED in mobile */
+
+@media (min-width: 770px) {
+    nav {
+        position: relative;
+        left: 0% !important;
+    }
+}
+
 @media (max-width: 770px) {
+    nav {
+        transition-duration: .3s;
+        position: fixed !important;
+        padding-top: .5rem;
+        /* left: -100%; */
+    }
+
     .menus .menu {
         span {
             display: none;
@@ -96,11 +113,11 @@ nav .nav-header {
 
     nav .nav-header { 
         display: flex;
-        flex-direction: column;
-        gap: .5rem;
+        flex-direction: column-reverse;
+        gap: 1rem;
         justify-content: start;
         align-items: center;
-        
+
         button {
             display: block;
         }

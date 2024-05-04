@@ -9,7 +9,7 @@ function CareerCompass() {
     const isInAdmin = useSelector(state => state.domain.isInAdmin)
 
   return (
-    <div id='career-compass'>
+    <div id='career-compass'  >
       {isInAdmin?
         <Admin /> :
         <UserApp />

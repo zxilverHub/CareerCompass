@@ -4,10 +4,14 @@ import App from './App.jsx'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import domain from './redux/domain.jsx'
+import apps from './redux/apps.jsx'
+import user from './redux/user.jsx'
 
 const store =  configureStore({
   reducer: {
-    domain: domain
+    domain: domain,
+    apps: apps,
+    user: user
   }
 })
 

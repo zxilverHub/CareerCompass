@@ -29,7 +29,7 @@ function Login({option}) {
 
                 <div className='show-password'>
                     {showPass=='password'?
-                        <svg onClick={()=>setShowPass('text')} width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg onClick={()=>setShowPass('email')} width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.4205 1.80475C8.77883 1.76808 9.13927 1.7498 9.5 1.75C13.4644 1.75 16.64 3.92725 18 7C17.6708 7.74744 17.226 8.45111 16.6783 9.091M4.842 2.88925C3.108 3.823 1.765 5.26975 1 7C2.36 10.0728 5.5356 12.25 9.5 12.25C11.1423 12.2576 12.7548 11.863 14.158 11.11M7.698 5.41C7.46119 5.61895 7.27334 5.86701 7.14518 6.14002C7.01702 6.41302 6.95106 6.70563 6.95106 7.00113C6.95106 7.29663 7.01702 7.58923 7.14518 7.86224C7.27334 8.13524 7.46119 8.3833 7.698 8.59225C7.93481 8.8012 8.21594 8.96695 8.52535 9.08003C8.83476 9.19311 9.16638 9.25132 9.50128 9.25132C9.83617 9.25132 10.1678 9.19311 10.4772 9.08003C10.7866 8.96695 11.0677 8.8012 11.3046 8.59225" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             <path d="M2.69995 1L16.3 13" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round"/>
                         </svg> :

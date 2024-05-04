@@ -3,5 +3,32 @@
     height: 100vh;
     height: 100dvh;
     min-height: 100vh;
+    max-height: 100vh;
     background-color: var(--light);
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.page-container {
+    position: relative;
+    right: 0;
+    top: 0;
+
+    z-index: 20;
+    width: clamp(80, 100%, 90%);
+    min-width: 87%;
+    height: 100%;
+    min-height: 100%;
+    /* background-color: var(--accent); */
+}
+
+@media (max-width: 770px) {
+    .page-container {
+        min-width: 100% !important;
+        width: 100% !important;
+        /* left: 0 !important; */
+    }
 }
