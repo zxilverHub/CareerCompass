@@ -3,11 +3,82 @@ import { useSelector, useDispatch } from 'react-redux'
 import Avatar from './components/Avatar'
 import { expanNav, changContainer } from '../../../redux/apps'
 import {emptyIllustration} from '../assets/ImageImporter'
+import tempIcon from '../../../assets/icons/logo.png'
+import CareerImagesImporter from '../assets/career images/CareerImagesImporter'
+import { useEffect, useState } from 'react'
 
 function Home() {
   const avatar = useSelector(state => state.user.avatar)
   const dispatch = useDispatch()
   const results = useSelector(state => state.user.results)
+
+  const tempCareer = [
+    {
+      career: 'UI/UX design',
+      education: ['Skill', 'Experience'],
+      id: 1
+    },
+
+    {
+      career: 'Teacher',
+      education: ['Bachelors degree'],
+      id: 2
+    },
+
+    {
+      career: 'Cloud developer',
+      education: ['Computer science', 'Skill'],
+      id: 3
+    }
+  ]
+
+
+  const tempCareerTrends = [
+    {
+      career: 'Nurse Practitioner',
+      salary: 120,
+      id: 1
+    },
+
+    {
+      career: 'Financial manager',
+      salary: 130,
+      id: 2
+    },
+
+    {
+      career: 'Software developer',
+      salary: 120,
+      id: 3
+    }
+  ]
+
+  const [trendScroll, setTrendScroll] = useState(0)
+
+  const scrollRight = () => {
+    const w = document.querySelector('.career-trends').clientWidth
+
+    if(trendScroll < (w*(tempCareerTrends.length-1))) {
+      setTrendScroll(prevScroll => prevScroll + w)
+    }
+  }
+
+  const scrollLeft = () => {
+    const w = document.querySelector('.career-trends').clientWidth
+    if(trendScroll >= w) {
+      setTrendScroll(prevScroll => prevScroll - w)
+    }
+  }
+
+  useEffect(()=> {
+    document.querySelector('.career-trends-card-container').scrollLeft = trendScroll
+    const w = document.querySelector('.career-trends').clientWidth
+
+    document.querySelector('.arrow-left').setAttribute('style', `opacity: ${trendScroll <= 0? 0 : 1}`)
+    document.querySelector('.arrow-right').setAttribute('style', `opacity: ${trendScroll > w? 0 : 1}`)
+    console.log({trendScroll, w})
+
+  }, [trendScroll])
 
   return (
     <div id='home'>
@@ -53,9 +124,87 @@ function Home() {
               <p>(Please take assessment test)</p>
             </div>
           }
-
-
       </div>
+
+      <div className="home-main-content">
+          <div className="home-explore">
+            <h2>Explore</h2>
+
+            <div className="career-trends">
+              <h2>Emerging career trends <span>2024</span> </h2>
+
+              <div className="career-trends-card-container">
+                {tempCareerTrends.map((career, i) => (
+                  <div className="career-trend-card" key={career.career+i}>
+                    <CareerImagesImporter id={career.id} />
+                    <div className="info">
+                      <p className='career-name'>{career.career}</p>
+                      <p className='salary'>Average yearly salary: <span>${career.salary}k</span> </p>
+                    </div>
+                  </div>
+                ))
+
+                }
+              </div>
+
+              <div className="career-trends-carousel-controller">
+                <button 
+                  onClick={()=>{
+                    scrollLeft()
+                  }}
+                className='arrow-left'>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.4639 2.11374C18.3024 2.0288 18.1208 1.98977 17.9386 2.00087C17.7565 2.01198 17.5809 2.07281 17.4309 2.17674L4.43093 11.1767C4.29849 11.2692 4.19033 11.3922 4.11564 11.5354C4.04095 11.6786 4.00195 11.8377 4.00195 11.9992C4.00195 12.1607 4.04095 12.3199 4.11564 12.4631C4.19033 12.6063 4.29849 12.7293 4.43093 12.8217L17.4309 21.8217C17.581 21.9255 17.7565 21.9863 17.9386 21.9975C18.1207 22.0087 18.3024 21.9699 18.464 21.8852C18.6256 21.8005 18.761 21.6733 18.8554 21.5172C18.9499 21.3611 18.9999 21.1822 18.9999 20.9997V2.99974C19 2.8172 18.95 2.63814 18.8555 2.48196C18.7611 2.32577 18.6256 2.19843 18.4639 2.11374ZM16.9999 19.0907L6.75693 11.9997L16.9999 4.90874V19.0907Z" fill="#FAFAFA"/>
+                  </svg>
+                </button>
+
+                <button
+                  onClick={()=>{
+                    scrollRight()
+                  }}
+                className='arrow-right'>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.53601 21.8855C5.69777 21.9697 5.8794 22.0082 6.06139 21.9969C6.24338 21.9856 6.41886 21.925 6.56901 21.8215L19.569 12.8215C19.7018 12.7295 19.8104 12.6067 19.8854 12.4635C19.9604 12.3203 19.9995 12.1611 19.9995 11.9995C19.9995 11.8379 19.9604 11.6787 19.8854 11.5356C19.8104 11.3924 19.7018 11.2696 19.569 11.1775L6.56901 2.17754C6.41915 2.07299 6.24346 2.0116 6.0611 2.00004C5.87874 1.98849 5.69671 2.02722 5.53486 2.11202C5.373 2.19682 5.23753 2.32442 5.14322 2.48092C5.0489 2.63743 4.99937 2.81682 5.00001 2.99954V20.9995C4.99998 21.1821 5.04991 21.3611 5.14439 21.5173C5.23888 21.6735 5.37431 21.8008 5.53601 21.8855ZM7.00001 4.90854L17.243 11.9995L7.00001 19.0905V4.90854Z" fill="white"/>
+                  </svg>
+                </button>
+              </div>
+
+            </div>
+            
+            <div className="home-careers">
+              <div className="career-label">
+                <h2>Careers</h2>
+                <div className="view-more">View more</div>
+              </div>
+
+              {tempCareer.map((career, i) => (
+                <div className="career-card" key={career.career+i}>
+                  <img src={tempIcon} alt={career.career} />
+
+                  <div className="info column">
+                    <p className='career-name'>{career.career}</p>
+
+                    <div className="education flex">
+                    {career.education.map((edu, j) => (
+                      <div className="edu" key={j}>
+                        {edu}
+                      </div>
+                    ))
+                    } 
+                    </div>
+                  </div>
+                </div>
+              ))
+
+              }
+            </div>
+
+          </div>
+          <div className="home-goals">
+
+          </div>
+      </div>
+      
     </div>
   )
 }

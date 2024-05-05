@@ -2,6 +2,10 @@
     width: 100%;
     height: 100%;
     padding: clamp(2%, 2%, 3%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .home-header {
@@ -50,7 +54,7 @@
     }
 
     .home-avatar {
-        width: clamp(2rem, 3vw, 3rem);
+        width: clamp(2rem, 3.3vw, 3rem);
         aspect-ratio: 1;
         border-radius: 50%;
         overflow: hidden;
@@ -73,6 +77,7 @@
         color: var(--white);
         cursor: pointer;
         transition-duration: .2s;
+        user-select: none;
     }
 
     .start-test-button:hover {
@@ -138,9 +143,229 @@
     }
 }
 
+
+.home-main-content {
+    width: 70%;
+    height: 100%;
+    border-radius: 12px;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.home-explore,
+.home-goals {
+    width: 40%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: .5rem;
+
+    h2 {
+        font-size: clamp(1.3rem, 2vw, 2rem);
+        font-weight: var(--weight-md);
+        color: var(--title);
+    }
+
+}
+
+.home-explore {
+    width: 60%;
+    background-color: var(--light);
+
+    .home-careers {
+        display: flex;
+        flex-direction: column;
+        gap: .65rem;
+
+        .career-label {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                font-size: var(--text);
+                color: var(--text);
+                font-weight: var(--weight-sm);
+            }
+
+            .view-more {
+                font-size: .65rem;
+                padding: .3rem .5rem;
+                background-color: var(--white);
+                border-radius: 8px;
+                user-select: none;
+                cursor: pointer;
+                color: var(--text);
+                transition-duration: .2s;
+            }
+
+            .view-more:hover {
+                transform: translate(-2px, -2px);
+                box-shadow: 2px 2px 0px var(--secondary);
+            }
+        }
+
+        .career-card {
+            width: 100%;
+            padding: .4rem;
+            background-color: var(--white);
+            border-radius: 6px;
+            box-shadow: 0 0 12px 1px var(--darker-light);
+            transition-duration: .1s;
+            user-select: none;
+            cursor: pointer;
+
+            display: flex;
+            gap: .5rem;
+            justify-content: start;
+
+            img {
+                width: 25px;
+                aspect-ratio: 1;
+                object-fit: contain;
+            }
+
+            .info {
+                gap: 0;
+
+                .career-name {
+                    font-size: clamp(.875rem, 1vw, 1rem);
+                    font-weight: var(--weight-md);
+                }
+                
+                .education {
+                    gap: .5rem;
+
+                    .edu {
+                        font-size: .75rem;
+                        color: var(--text);
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+
+        .career-card:hover {
+            background-color: var(--light);
+        }
+    }
+
+    .career-trends {
+        position: relative;
+        margin-bottom: 1rem;
+
+        h2 {
+            font-size: var(--text);
+            color: var(--text);
+            font-weight: var(--weight-sm);
+            margin-bottom: .3rem;
+
+            span {
+                color: var(--secondary);
+            }
+        }
+
+        .career-trends-card-container {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            overflow-x: scroll; 
+            gap: 1rem;
+            scroll-snap-type: x mandatory;
+            transition: all .3s ease;
+
+            .career-trend-card {
+                user-select: none;
+                width: 100%;
+                min-width: 100%;
+                height: 150px;
+                padding: 1rem;
+                background-color: var(--white);
+                border-radius: 8px;
+                scroll-snap-align: start;
+
+                display: flex;
+                gap: .7rem;
+
+                img {
+                    width: 200px;
+                    aspect-ratio: 1;
+                    object-fit: cover;
+                    border-radius: 4px;
+                }
+
+                .info {
+                    .career-name {
+                        font-weight: var(--weight-md);
+                    }
+
+                    .salary,
+                    .salary span {
+                        font-size: clamp(.65rem, 1vw, 875rem);
+                        span {
+                            color: var(--accent);
+                        }
+                    }
+                }
+            }
+        }
+
+        .career-trends-card-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .career-trends-carousel-controller {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 108%;
+            height: 80%;
+            background: transparent;
+            z-index: 10;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                width: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--primary);
+                outline: none;
+                border: none;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .arrow-left {
+                svg {
+                    margin-right: .2rem;
+                }
+            }
+
+            .arrow-right {
+                svg {
+                    margin-left: .2rem;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 770px) {
     .home-header {
-        width: 100%;
+        position: fixed;
+        z-index: 90;
+        width: 94%;
+        margin: 0 auto;
         gap: .5rem;
         padding: .5rem;
 
@@ -163,16 +388,40 @@
 
     #home {
         padding: 3%;
+        height: 100vh !important;
+        min-height: 100vh !important;
 
         display: flex !important;
         flex-direction: column;
+
+        overflow-y: auto;
     }
 
     .home-results {
-        position: relative;
+        margin-top: 20%;
+        position: relative !important;
         inset: 0;
 
-        height: 200px !important;
         width: 100%;
+        height: auto;
+
+        .empty-result {
+            position: relative;
+            padding-bottom: 1rem;
+
+            img {
+                width: 35%;
+            }
+        }
+    }
+
+    .home-main-content {
+        width: 100%;
+        flex-direction: column;
+
+        > * {
+            padding: 1rem;
+            width: 100% !important;
+        }
     }
 }

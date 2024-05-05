@@ -10,7 +10,7 @@
 
     justify-content: center !important;
     align-items: center !important;
-    gap: clamp(.6rem, .8vw, .8rem);
+    gap: clamp(.4rem, .5vw, .5rem);
 
     label {
         font-size: 1rem;

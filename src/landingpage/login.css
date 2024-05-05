@@ -10,7 +10,7 @@
 
     justify-content: center !important;
     align-items: center !important;
-    gap: 1.2rem;
+    gap: .5rem;
 
     label {
         font-size: var(--text-size);
@@ -51,7 +51,7 @@
         display: flex;
         align-items: center;
         gap: .6rem;
-        padding: .7rem;
+        padding: .4rem .7rem;
         border-radius: 12px;
         border: 1px solid var(--secondary);
         background-color: var(--light);
@@ -93,7 +93,7 @@
     align-items: center !important;
 
     .log-in-button {
-        padding-block: .8rem;
+        padding-block: .4rem;
         background-color: var(--primary);
         color: var(--white);
         width: 350px;
