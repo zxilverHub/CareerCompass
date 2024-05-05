@@ -137,6 +137,7 @@
         }
 
         p {
+            font-size: .875rem;
             color: var(--text);
             opacity: .8;
         }
@@ -301,6 +302,8 @@
                 .info {
                     .career-name {
                         font-weight: var(--weight-md);
+                        line-height: 100%; 
+                        margin-bottom: .2rem;
                     }
 
                     .salary,
@@ -318,45 +321,37 @@
             display: none;
         }
 
-        .career-trends-carousel-controller {
+        button {
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 108%;
-            height: 80%;
-            background: transparent;
-            z-index: 10;
-
+            width: 35px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
 
-            button {
-                width: 35px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: var(--primary);
-                outline: none;
-                border: none;
-                aspect-ratio: 1;
-                border-radius: 50%;
-                cursor: pointer;
-            }
+            background-color: var(--primary);
+            outline: none;
+            border: none;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            cursor: pointer;
+        }
 
-            .arrow-left {
-                svg {
-                    margin-right: .2rem;
-                }
-            }
-
-            .arrow-right {
-                svg {
-                    margin-left: .2rem;
-                }
+        .arrow-left {
+            top: 50%;
+            left: -15px;
+            svg {
+                margin-right: .2rem;
             }
         }
+
+        .arrow-right {
+            top: 50%;
+            right: -15px;
+            svg {
+                margin-left: .2rem;
+            }
+        }
+
     }
 }
 
@@ -393,7 +388,7 @@
 
         display: flex !important;
         flex-direction: column;
-
+        gap: .2rem !important;
         overflow-y: auto;
     }
 

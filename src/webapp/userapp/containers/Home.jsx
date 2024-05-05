@@ -74,9 +74,8 @@ function Home() {
     document.querySelector('.career-trends-card-container').scrollLeft = trendScroll
     const w = document.querySelector('.career-trends').clientWidth
 
-    document.querySelector('.arrow-left').setAttribute('style', `opacity: ${trendScroll <= 0? 0 : 1}`)
-    document.querySelector('.arrow-right').setAttribute('style', `opacity: ${trendScroll > w? 0 : 1}`)
-    console.log({trendScroll, w})
+    document.querySelector('.arrow-left').setAttribute('style', `opacity: ${trendScroll <= 0? .2 : 1}`)
+    document.querySelector('.arrow-right').setAttribute('style', `opacity: ${trendScroll > w? .2 : 1}`)
 
   }, [trendScroll])
 
@@ -147,8 +146,7 @@ function Home() {
                 }
               </div>
 
-              <div className="career-trends-carousel-controller">
-                <button 
+              <button 
                   onClick={()=>{
                     scrollLeft()
                   }}
@@ -167,7 +165,6 @@ function Home() {
                       <path d="M5.53601 21.8855C5.69777 21.9697 5.8794 22.0082 6.06139 21.9969C6.24338 21.9856 6.41886 21.925 6.56901 21.8215L19.569 12.8215C19.7018 12.7295 19.8104 12.6067 19.8854 12.4635C19.9604 12.3203 19.9995 12.1611 19.9995 11.9995C19.9995 11.8379 19.9604 11.6787 19.8854 11.5356C19.8104 11.3924 19.7018 11.2696 19.569 11.1775L6.56901 2.17754C6.41915 2.07299 6.24346 2.0116 6.0611 2.00004C5.87874 1.98849 5.69671 2.02722 5.53486 2.11202C5.373 2.19682 5.23753 2.32442 5.14322 2.48092C5.0489 2.63743 4.99937 2.81682 5.00001 2.99954V20.9995C4.99998 21.1821 5.04991 21.3611 5.14439 21.5173C5.23888 21.6735 5.37431 21.8008 5.53601 21.8855ZM7.00001 4.90854L17.243 11.9995L7.00001 19.0905V4.90854Z" fill="white"/>
                   </svg>
                 </button>
-              </div>
 
             </div>
             
