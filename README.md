@@ -1,4 +1,4 @@
-# CareerCompass
+# CareerCompass - add new branch
 
 This repository is fot our system CareerCompass.
 CareerCompass is a web application focuses on providing recommendation for a users career, exploration of careers and set goals and more.
